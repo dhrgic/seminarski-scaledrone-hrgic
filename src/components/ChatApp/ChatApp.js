@@ -2,7 +2,6 @@ import React from "react";
 import {
   ChatAppWrapper,
   MessagingWrapper,
-  InputWrapper,
 } from "../../lib/style/generalStyles";
 import Users from "./Users/Users";
 import Messages from "./Messages/Messages";
@@ -19,9 +18,7 @@ const ChatApp = () => {
         <Users></Users>
         <MessagingWrapper>
           <Messages></Messages>
-          <InputWrapper>
-            <Input handlerSendMessage={handleSubmit}></Input>
-          </InputWrapper>
+          <Input handlerSendMessage={handleSubmit}></Input>
         </MessagingWrapper>
       </ChatAppWrapper>
     </main>

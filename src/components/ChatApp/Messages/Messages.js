@@ -1,22 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import "./Messages.scss"
-import LogoReact from "../../../assets/images/React-icon.svg.png"
+import React from "react";
+import PropTypes from "prop-types";
+import "./Messages.scss";
+import LogoReact from "../../../assets/images/React-icon.svg.png";
 
-const Messages = props => {
+const Messages = (props) => {
   return (
-    <div className="MessagingContainer">
     <div className="MessagesWrapper">
       <div className="MessagesContainer">
         <div className="Message">
           <div className="MessageHeader">
             <div className="MessageSender">
               <figure className="Message-Figure">
-                <img
-                  className="Message-Image"
-                  src={LogoReact}
-                  alt=""
-                />
+                <img className="Message-Image" src={LogoReact} alt="" />
               </figure>
               <p>Name</p>
             </div>
@@ -37,11 +32,7 @@ const Messages = props => {
           <div className="MessageHeader">
             <div className="MessageSender">
               <figure className="Message-Figure">
-                <img
-                  className="Message-Image"
-                  src={LogoReact}
-                  alt=""
-                />
+                <img className="Message-Image" src={LogoReact} alt="" />
               </figure>
               <p>Name</p>
             </div>
@@ -62,11 +53,7 @@ const Messages = props => {
           <div className="MessageHeader">
             <div className="MessageSender">
               <figure className="Message-Figure">
-                <img
-                  className="Message-Image"
-                  src={LogoReact}
-                  alt=""
-                />
+                <img className="Message-Image" src={LogoReact} alt="" />
               </figure>
               <p>Name</p>
             </div>
@@ -87,11 +74,7 @@ const Messages = props => {
           <div className="MessageHeader">
             <div className="MessageSender">
               <figure className="Message-Figure">
-                <img
-                  className="Message-Image"
-                  src={LogoReact}
-                  alt=""
-                />
+                <img className="Message-Image" src={LogoReact} alt="" />
               </figure>
               <p>Name</p>
             </div>
@@ -112,11 +95,7 @@ const Messages = props => {
           <div className="MessageHeader">
             <div className="MessageSender">
               <figure className="Message-Figure">
-                <img
-                  className="Message-Image"
-                  src={LogoReact}
-                  alt=""
-                />
+                <img className="Message-Image" src={LogoReact} alt="" />
               </figure>
               <p>Name</p>
             </div>
@@ -136,10 +115,9 @@ const Messages = props => {
         <div className="shadow"></div>
       </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-Messages.propTypes = {}
+Messages.propTypes = {};
 
-export default Messages
+export default Messages;

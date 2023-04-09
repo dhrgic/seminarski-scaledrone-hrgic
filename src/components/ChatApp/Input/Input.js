@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import PropTypes from "prop-types";
+import { InputWrapper, MessagesInput, InputButton } from "./InputStyles";
 
 const Input = ({ handlerSendMessage }) => {
   const [message, setMessage] = useState("");
@@ -15,25 +16,27 @@ const Input = ({ handlerSendMessage }) => {
   };
 
   return (
-    <>
-      <input
+    <InputWrapper>
+      <MessagesInput
         onChange={onChange}
         value={message}
+        rows={2}
         type="text"
         placeholder="Start chatting..."
         onKeyDown={(e) => {
           if (e.key === "Enter" && message.length > 0) {
+            e.preventDefault();
             handleSendMessage();
           }
         }}
       />
-      <button
+      <InputButton
         onClick={handleSendMessage}
         disabled={message.length > 0 ? false : true}
       >
         Send
-      </button>
-    </>
+      </InputButton>
+    </InputWrapper>
   );
 };
 
