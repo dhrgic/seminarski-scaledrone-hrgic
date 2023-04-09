@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.Header {
+    height: 7vh;
+    background-color: rgb(30, 21, 61);
+    box-shadow: 0 0px 5px 5px rgb(17, 12, 34),inset 0px 0px 8px 0px rgba(26, 11, 41, 0.986);
+
+
+&-Inner {
+    height: 100%;
+    margin: 0 auto;
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+    }
+
+&-Figure {
+    height: 60%;
+}
+
+&-Image {
+    object-fit: cover;
+    height: 100%;
+}
+
+&-HeadingContainer{
+    /* padding-top: 8px; */
+    transform: scale(80%);
+}
+
+&-Heading {
+    font-size: 24px;
+    color: antiquewhite;
+    text-shadow: 0 1px 2px rgb(150, 139, 218);
+}
+
+&-Copywrite {
+    font-size: 10px;
+    color: antiquewhite;
+    text-align: right;
+}
+}
