@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.Message {
+  width: 70%;
+  margin-bottom: 12px;
+  padding: 16px;
+  background-color: rgb(173, 80, 80);
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 8px 2px rgba(56, 55, 58, 0.493);
+}
+
+.MessageHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 14px;
+  align-content: center;
+}
+
+.MessageSender {
+  display: flex;
+  gap: 12px;
+}
+
+.Message-Figure {
+  height: 100%;
+}
+.Message-Image {
+  height: 100%;
+  object-fit: cover;
+}
+.MessageTime {
+  font-size: 12px;
+}
+.MessageText {
+  padding-top: 12px;
+  padding-bottom: 24px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  font-weight: 500;
+  color: antiquewhite;
+}
