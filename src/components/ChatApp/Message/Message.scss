@@ -3,12 +3,18 @@
 }
 
 .Message {
+  align-self: flex-end;
   width: 70%;
   margin-bottom: 12px;
   padding: 16px;
   background-color: rgb(173, 80, 80);
   border-radius: 5px;
   box-shadow: inset 0px 0px 8px 2px rgba(56, 55, 58, 0.493);
+}
+
+.MyMessage {
+  align-self: flex-start;
+  background-color: cornflowerblue;
 }
 
 .MessageHeader {

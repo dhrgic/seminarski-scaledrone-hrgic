@@ -8,7 +8,7 @@ export const Body = styled.div`
 
 export const ChatAppWrapper = styled.div`
   box-sizing: border-box;
-  background-color: rgb(30, 21, 61);
+  background-color: rgba(37, 31, 68, 0.239);
   height: 85vh;
   width: 65vw;
   margin: 0 auto;
@@ -35,16 +35,27 @@ export const UsersWrapper = styled.div`
   gap: 12px;
 `;
 
+export const UsersList = styled.div`
+  background-color: rgb(30, 21, 61);
+  box-shadow: inset 0px 0px 20px 20px rgba(26, 11, 41, 0.986);
+  height: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const MessagingWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: 8px;
   width: 80%;
 `;
 
 export const MessagesWrapper = styled.div`
-  height: 90%;
+  height: 85%;
   padding: 12px;
   border-radius: 5px;
   border: 0.5px solid rgba(175, 167, 245, 0.226);
