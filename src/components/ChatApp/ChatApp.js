@@ -94,14 +94,14 @@ const ChatApp = () => {
           <MessagesWrapper>
             <MessagesContainer id="handleScroll">
               {messages.map((messageContent, index) => (
-                <Message
+                (<Message
                   myMessage={messageContent.data.name === member.username}
                   key={index}
                   user={messageContent.data.name}
                   messageText={messageContent.data.text}
                   time={messageContent.timestamp}
                 ></Message>
-              ))}
+              )))}
             </MessagesContainer>
           </MessagesWrapper>
           <Input handlerSendMessage={handleSubmit}></Input>
