@@ -19,6 +19,8 @@ const ChatApp = () => {
   const [member, setMember] = useState([]);
   const [membersArray, setMembersArray] = useState([]);
 
+/* Tu ćemo se igrati */
+
   useEffect(() => {
     /*on mount the app creates a new instance od scaledrone*/
     if (member.username !== "") {
