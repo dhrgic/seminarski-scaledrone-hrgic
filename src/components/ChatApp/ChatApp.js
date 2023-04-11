@@ -17,6 +17,7 @@ const ChatApp = () => {
   const [room, setRoom] = useState(false);
   const [messages, setMessages] = useState([]);
   const [member, setMember] = useState([]);
+  const [membersArray, setMembersArray] = useState([]);
 
   useEffect(() => {
     /*on mount the app creates a new instance od scaledrone*/
@@ -59,10 +60,14 @@ const ChatApp = () => {
           setRoom(true);
         }
       });
+    
 
       room.on("message", (message) => {
         receiveMsg(message);
       });
+      
+      
+      
     };
     // RECEIVING MESSAGES FROM SCALEDRONE
     const receiveMsg = (message) => {
@@ -72,22 +77,26 @@ const ChatApp = () => {
     if (drone && !member.username) {
       droneEvents();
     }
-  }, [drone, member, room, messages]);
-
+  }, [drone, member, room, messages, membersArray]);
+  
+  console.log(membersArray);
+  
   const handleSubmit = (message) => {
     drone.publish({
       room: "observable-room",
-      message: { text: message, name: member.username },
+      message: { text: message, name: member.username, color: member.color },
     });
   };
-
+  
   return (
     <main>
       <ChatAppWrapper>
         <UsersWrapper>
           {" Currently active users"}
           <UsersList>
-            <User></User>
+            {membersArray.map((member)=>(
+              <User key={member.clientData.id} username={member.clientData.username} color={member.clientData.color}></User>
+            ))}
           </UsersList>
         </UsersWrapper>
         <MessagingWrapper>
@@ -100,6 +109,7 @@ const ChatApp = () => {
                   user={messageContent.data.name}
                   messageText={messageContent.data.text}
                   time={messageContent.timestamp}
+                  color={messageContent.data.color}
                 ></Message>
               )))}
             </MessagesContainer>

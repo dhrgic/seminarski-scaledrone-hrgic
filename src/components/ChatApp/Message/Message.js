@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Message.scss";
 import LogoReact from "../../../assets/images/React-icon.svg.png";
 
-const Messages = ({ user, messageText, myMessage, time }) => {
+const Messages = ({ user, messageText, myMessage, time, color }) => {
 
   const getTime = new Date(time*1000);
   const hours = getTime.getHours();
@@ -12,13 +12,11 @@ const Messages = ({ user, messageText, myMessage, time }) => {
   const formattedtime= hours+":"+ minutes;
 
   return (
-    <div className={`Message ${myMessage ? "" : "MyMessage"} `}>
+    <div className={`Message ${myMessage ? "MyMessage" : ""} `}>
       <div className="MessageHeader">
         <div className="MessageSender">
-          <figure className="Message-Figure">
-            <img className="Message-Image" src={LogoReact} alt="" />
-          </figure>
-          <p>{user.toUpperCase()}</p>
+          <div className="Message-UserColor" style={{backgroundColor:color}}></div>
+          <p className="Message-User">{user.toUpperCase()}</p>
         </div>
       </div>
       <div className="MessageText">
@@ -37,6 +35,7 @@ Messages.propTypes = {
   id: PropTypes.string,
   myMessage: PropTypes.bool,
   time: PropTypes.number,
+  color: PropTypes.string,
 };
 
 export default Messages;

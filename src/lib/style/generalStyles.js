@@ -51,7 +51,7 @@ export const MessagingWrapper = styled.div`
   height: 100%;
   flex-direction: column;
   gap: 8px;
-  width: 80%;
+  width: 100%;
 `;
 
 export const MessagesWrapper = styled.div`
