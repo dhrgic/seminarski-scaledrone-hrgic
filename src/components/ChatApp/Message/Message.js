@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Message.scss";
-import LogoReact from "../../../assets/images/React-icon.svg.png";
 
 const Messages = ({ user, messageText, myMessage, time, color }) => {
 

@@ -4,10 +4,7 @@ import {
   MessagesContainer,
   MessagingWrapper,
   MessagesWrapper,
-  UsersWrapper,
-  UsersList,
 } from "../../lib/style/generalStyles";
-import User from "./User/User";
 import Message from "./Message/Message";
 import Input from "./Input/Input";
 import { randomName, randomColor, clientID } from "../../utils/data";
@@ -17,7 +14,6 @@ const ChatApp = () => {
   const [room, setRoom] = useState(false);
   const [messages, setMessages] = useState([]);
   const [member, setMember] = useState([]);
-  const [membersArray, setMembersArray] = useState([]);
 
   useEffect(() => {
     /*on mount the app creates a new instance od scaledrone*/
@@ -61,13 +57,11 @@ const ChatApp = () => {
         }
       });
     
-
       room.on("message", (message) => {
         receiveMsg(message);
       });
       
-      
-      
+    
     };
     // RECEIVING MESSAGES FROM SCALEDRONE
     const receiveMsg = (message) => {
@@ -77,9 +71,9 @@ const ChatApp = () => {
     if (drone && !member.username) {
       droneEvents();
     }
-  }, [drone, member, room, messages, membersArray]);
-  
-  console.log(membersArray);
+    const messageDiv = document.getElementById("handleScroll");
+    messageDiv.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+  }, [drone, member, room, messages,]);
   
   const handleSubmit = (message) => {
     drone.publish({
@@ -91,19 +85,11 @@ const ChatApp = () => {
   return (
     <main>
       <ChatAppWrapper>
-        <UsersWrapper>
-          {" Currently active users"}
-          <UsersList>
-            {membersArray.map((member)=>(
-              <User key={member.clientData.id} username={member.clientData.username} color={member.clientData.color}></User>
-            ))}
-          </UsersList>
-        </UsersWrapper>
         <MessagingWrapper>
           <MessagesWrapper>
             <MessagesContainer id="handleScroll">
               {messages.map((messageContent, index) => (
-                (<Message
+                <Message
                   myMessage={messageContent.data.name === member.username}
                   key={index}
                   user={messageContent.data.name}
@@ -111,7 +97,7 @@ const ChatApp = () => {
                   time={messageContent.timestamp}
                   color={messageContent.data.color}
                 ></Message>
-              )))}
+              ))}
             </MessagesContainer>
           </MessagesWrapper>
           <Input handlerSendMessage={handleSubmit}></Input>

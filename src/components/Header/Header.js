@@ -4,7 +4,7 @@ import LogoScaledrone from "../../assets/images/logo_white.svg";
 import LogoReact from "../../assets/images/React-icon.svg.png"
 import "./Header.scss";
 
-const Header = ({currentUser="Danijel"}) => {
+const Header = () => {
   return (
     <header className="Header">
       <div className="Header-Inner">
@@ -12,7 +12,7 @@ const Header = ({currentUser="Danijel"}) => {
           <img className="Header-Image" src={LogoScaledrone} alt="Scaledrone logo" />
         </figure>
         <div className="Header-HeadingContainer">
-          <h1 className="Header-Heading">Chat window for {currentUser}</h1>
+          <h1 className="Header-Heading">Chat Application</h1>
           <p className="Header-Copywrite">Powered by Scaledrone® and React®</p>
         </div>
         <figure className="Header-Figure">
@@ -27,4 +27,4 @@ Header.propTypes = {
     currentUser: PropTypes.string,
 }
 
-export default Header
+export default Header;
