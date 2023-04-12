@@ -111,3 +111,5 @@ export const ActiveUser = styled.p`
     font-size: 18px;
   }
 `;
+
+export const Main = styled.main``;
