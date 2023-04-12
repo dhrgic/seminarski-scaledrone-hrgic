@@ -4,6 +4,8 @@ import {
   MessagesContainer,
   MessagingWrapper,
   MessagesWrapper,
+  EmptyContainerMessage,
+  ActiveUser,
 } from "../../lib/style/generalStyles";
 import Message from "./Message/Message";
 import Input from "./Input/Input";
@@ -56,12 +58,10 @@ const ChatApp = () => {
           setRoom(true);
         }
       });
-    
+
       room.on("message", (message) => {
         receiveMsg(message);
       });
-      
-    
     };
     // RECEIVING MESSAGES FROM SCALEDRONE
     const receiveMsg = (message) => {
@@ -72,32 +72,46 @@ const ChatApp = () => {
       droneEvents();
     }
     const messageDiv = document.getElementById("handleScroll");
-    messageDiv.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
-  }, [drone, member, room, messages,]);
-  
+    messageDiv.scrollTo(
+      0,
+      document.body.scrollHeight || document.documentElement.scrollHeight
+    );
+  }, [drone, member, room, messages]);
+
   const handleSubmit = (message) => {
     drone.publish({
       room: "observable-room",
       message: { text: message, name: member.username, color: member.color },
     });
   };
-  
+
   return (
     <main>
       <ChatAppWrapper>
         <MessagingWrapper>
+          <ActiveUser style={{ color: `${member.color}` }}>
+            You are chatting as {member.username}
+          </ActiveUser>
           <MessagesWrapper>
             <MessagesContainer id="handleScroll">
-              {messages.map((messageContent, index) => (
-                <Message
-                  myMessage={messageContent.data.name === member.username}
-                  key={index}
-                  user={messageContent.data.name}
-                  messageText={messageContent.data.text}
-                  time={messageContent.timestamp}
-                  color={messageContent.data.color}
-                ></Message>
-              ))}
+              {messages.length === 0 ? (
+                <EmptyContainerMessage>
+                  Woow!
+                  <br /> This is kinda empty.
+                  <br /> Why don't you try writing your first message?{" "}
+                </EmptyContainerMessage>
+              ) : (
+                messages.map((messageContent, index) => (
+                  <Message
+                    myMessage={messageContent.data.name === member.username}
+                    key={index}
+                    user={messageContent.data.name}
+                    messageText={messageContent.data.text}
+                    time={messageContent.timestamp}
+                    color={messageContent.data.color}
+                  ></Message>
+                ))
+              )}
             </MessagesContainer>
           </MessagesWrapper>
           <Input handlerSendMessage={handleSubmit}></Input>

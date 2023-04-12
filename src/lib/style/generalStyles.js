@@ -1,48 +1,32 @@
 import styled from "styled-components";
+import { colors, device } from "./theme";
 
 export const Body = styled.div`
-  background-color: rgb(36, 37, 85);
+  background-color: ${colors.bodyBck};
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
 `;
 
 export const ChatAppWrapper = styled.div`
   box-sizing: border-box;
-  background-color: rgba(37, 31, 68, 0.239);
-  height: 85vh;
-  width: 65vw;
+  background-color: ${colors.appContainerBck};
+  height: 91vh;
+  width: 100vw;
   margin: 0 auto;
   border-radius: 5px;
   margin-top: 10px;
-  padding: 8px;
-  border: 0.5px solid rgba(25, 10, 43, 0.979);
-  box-shadow: 0 10px 20px 5px rgb(17, 12, 34),
-    inset 0px 0px 8px 0px rgba(26, 11, 41, 0.986);
+  padding: 4px;
+  border: 0.5px solid 4px rgb(7, 19, 33);
+  box-shadow: 0 0px 10px 4px rgb(7, 19, 33),
+    inset 0px 0px 8px 2px rgba(21, 20, 40, 0.986);
   display: flex;
-  gap: 8px;
-`;
+  gap: 4px;
 
-export const UsersWrapper = styled.div`
-  box-sizing: border-box;
-  width: 25%;
-  padding: 12px;
-  border-radius: 5px;
-  border: 0.5px solid rgba(175, 167, 245, 0.226);
-  box-shadow: inset 0px 0px 5px 0px rgba(245, 245, 245, 0.342);
-  background-color: rgb(50, 35, 100);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-export const UsersList = styled.div`
-  background-color: rgb(30, 21, 61);
-  box-shadow: inset 0px 0px 20px 20px rgba(26, 11, 41, 0.986);
-  height: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  @media screen and (min-width: ${device.desktop}) {
+    width: 65vw;
+    padding: 8px;
+    gap: 8px;
+  }
 `;
 
 export const MessagingWrapper = styled.div`
@@ -50,23 +34,35 @@ export const MessagingWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
+
+  @media screen and (min-width: ${device.tablet}) {
+    padding: 8px;
+  }
+
+  @media screen and (min-width: ${device.desktop}) {
+    gap: 12px;
+  }
 `;
 
 export const MessagesWrapper = styled.div`
-  height: 85%;
-  padding: 12px;
+  height: 82%;
+  padding: 4px;
   border-radius: 5px;
   border: 0.5px solid rgba(175, 167, 245, 0.226);
   box-shadow: inset 0px 0px 5px 0px rgba(245, 245, 245, 0.342);
-  background-color: rgb(50, 35, 100);
+  background-color: ${colors.wrapperBck};
   display: flex;
+
+  @media screen and (min-width: ${device.tablet}) {
+    padding: 12px;
+  }
 `;
 
 export const MessagesContainer = styled.div`
-  background-color: rgb(30, 21, 61);
-  padding: 24px;
+  background-color: ${colors.containerBck};
+  padding: 8px;
   border-radius: 5px;
   width: 100%;
   overflow-y: scroll;
@@ -75,4 +71,43 @@ export const MessagesContainer = styled.div`
   justify-content: flex;
   box-shadow: inset 0px 0px 20px 20px rgba(26, 11, 41, 0.986);
   position: relative;
+
+  @media screen and (min-width: ${device.tablet}) {
+    padding: 24px;
+  }
+`;
+
+export const EmptyContainerMessage = styled.p`
+  display: block;
+  align-self: center;
+  color: rgba(212, 209, 181, 0.6);
+  margin: auto 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2;
+  text-shadow: 0 0 5px rgba(130, 191, 196, 0.533);
+
+  @media screen and (min-width: ${device.tablet}) {
+    font-size: 32px;
+    line-height: 4;
+  }
+`;
+
+export const ActiveUser = styled.p`
+  color: rgba(212, 209, 181, 0.6);
+  font-size: 12px;
+  text-shadow: 0 0 2px rgba(130, 191, 196, 0.533);
+  height: 3%;
+  text-align: center;
+  padding: 2px 0;
+
+  @media screen and (min-width: ${device.mobileSmall}) {
+    padding: 8px 0;
+    height: 4%;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: ${device.desktop}) {
+    font-size: 18px;
+  }
 `;
