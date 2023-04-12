@@ -1,15 +1,9 @@
-import Header from "./components/Header/Header";
-import ChatApp from "./components/ChatApp/ChatApp";
-import { Body } from "./lib/style/generalStyles";
+import Home from "./pages/Home";
 
 function App() {
-
   return (
     <>
-    <Body>
-    <Header></Header>
-    <ChatApp></ChatApp>
-    </Body>
+    <Home/>
     </>
   )
 }
