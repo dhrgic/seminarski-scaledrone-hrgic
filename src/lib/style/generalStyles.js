@@ -42,12 +42,13 @@ export const MessagingWrapper = styled.div`
   }
 
   @media screen and (min-width: ${device.desktop}) {
-    gap: 12px;
+    gap: 8px;
   }
 `;
 
 export const MessagesWrapper = styled.div`
-  height: 82%;
+box-sizing: border-box;
+  height: 80%;
   padding: 4px;
   border-radius: 5px;
   border: 0.5px solid rgba(175, 167, 245, 0.226);
@@ -61,6 +62,7 @@ export const MessagesWrapper = styled.div`
 `;
 
 export const MessagesContainer = styled.div`
+box-sizing: border-box;
   background-color: ${colors.containerBck};
   padding: 8px;
   border-radius: 5px;
