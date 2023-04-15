@@ -47,7 +47,7 @@ export const MessagingWrapper = styled.div`
 `;
 
 export const MessagesWrapper = styled.div`
-box-sizing: border-box;
+  box-sizing: border-box;
   height: 80%;
   padding: 4px;
   border-radius: 5px;
@@ -62,7 +62,7 @@ box-sizing: border-box;
 `;
 
 export const MessagesContainer = styled.div`
-box-sizing: border-box;
+  box-sizing: border-box;
   background-color: ${colors.containerBck};
   padding: 8px;
   border-radius: 5px;
@@ -70,7 +70,6 @@ box-sizing: border-box;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: flex;
   box-shadow: inset 0px 0px 20px 20px rgba(26, 11, 41, 0.986);
   position: relative;
 
