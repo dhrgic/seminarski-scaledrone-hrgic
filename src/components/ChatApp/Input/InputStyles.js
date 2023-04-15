@@ -52,14 +52,10 @@ export const InputButton = styled.button`
   &:hover {
     background-color: antiquewhite;
     box-shadow: inset 0px 0px 10px 2px rgba(37, 31, 68, 0.6);
-    color: rgb(61, 58, 70);
+    color: ${colors.wrapperBck};
   }
 
   @media screen and (min-width: ${device.tablet}) {
     font-size: 24px;
   }
 `;
-
-/* stilizirati button hover, smanjiti veličinu i font na mojim porukama i maknuti oznaku
-Ubaciti ime korisnika negdje iznad u Chat app i dodati element za praznu kućicu koji ubacujemo
-s tekstom, let's start chatting won't we*/

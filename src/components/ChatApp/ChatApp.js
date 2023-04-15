@@ -60,11 +60,11 @@ const ChatApp = () => {
       });
 
       room.on("message", (message) => {
-        receiveMsg(message);
+        handleReceiveMsg(message);
       });
     };
     // RECEIVING MESSAGES FROM SCALEDRONE
-    const receiveMsg = (message) => {
+    const handleReceiveMsg = (message) => {
       setMessages((messages) => [...messages, message]);
     };
 
