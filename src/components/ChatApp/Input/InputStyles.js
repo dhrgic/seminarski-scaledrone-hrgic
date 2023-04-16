@@ -4,7 +4,7 @@ import { colors, device } from "../../../lib/style/theme";
 export const InputWrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 12%;
+  height: 15%;
   padding: 4px;
   border-radius: 5px;
   border: 0.5px solid rgba(175, 167, 245, 0.226);
