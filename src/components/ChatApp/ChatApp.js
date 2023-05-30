@@ -18,7 +18,6 @@ const ChatApp = () => {
   const [member, setMember] = useState([]);
 
   useEffect(() => {
-    /*on mount the app creates a new instance od scaledrone*/
     if (member.username !== "") {
       const drone = new window.Scaledrone(clientID, {
         data: member,
